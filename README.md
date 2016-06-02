@@ -1,6 +1,8 @@
 robotframework.demo
 ===================
-code tested on ubuntu 14.04
+	code tested on
+	Ubuntu 14.04 Desktop 64-bit
+        Mac OSX 10.11.5
 
 Environment preparation 
 =======================
