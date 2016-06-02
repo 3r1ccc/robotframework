@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>#!/bin/bash
+
+# clean up
+if [[ -d vv ]]; then
+    rm -rf vv
+fi
+
+# install/activate python virtualenv
+virtualenv vv
+. vv/bin/activate
+
+# clone the demo project
+if [[ ! -d robotframework.demo ]]; then
+    git clone https://github.com/3r1ccc/robotframework.demo.git
+else
+    git pull
+fi
+
+# python setup for project
+cd robotframework.demo
+python setup.py install
+
+# run test 
+export PATH=/usr/bin:${PATH}
+pybot tests/screenshot.robot
+
+# tear down virtualenv
+deactivate</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>
