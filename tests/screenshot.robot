@@ -14,7 +14,7 @@ Screenshot Test
     Page should contain  ruckus
     Page should contain  wireless
     Page should contain  94089
-    Capture Page Screenshot
+    Take Screenshot
 
 *** Keywords ***
 
