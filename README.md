@@ -4,21 +4,21 @@ code tested on ubuntu 14.04
 
 Environment preparation 
 =======================
-1. pull container
+	1. pull container
 
-2. Install packages
-	sudo apt-get install python-pip
-	sudo apt-get install python-virtualenv
+	2. Install packages
+        sudo apt-get install python-pip
+        sudo apt-get install python-virtualenv
 
-3. activate python virtualenv
-	virtualenv test
+	3. activate python virtualenv
+        virtualenv test
         source test/bin/activate
 	
-4. clone this project
-	git clone https://github.com/3r1ccc/robotframework.demo.git
+	4. clone this project
+        git clone https://github.com/3r1ccc/robotframework.demo.git
 
-5. python setup
-	python setup install
+	5. python setup
+        python setup install
 
 Running test
 ============
