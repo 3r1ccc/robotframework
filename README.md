@@ -8,28 +8,15 @@ Environment preparation
 =======================
 	1. pull container
 
-	2. Install packages
-        sudo apt-get install python-pip
-        sudo apt-get install python-virtualenv
-
-	3. activate python virtualenv
-        virtualenv test
-        source test/bin/activate
-	
-	4. clone this project
-        git clone https://github.com/3r1ccc/robotframework.demo.git
-
-	5. python setup
-        python setup install
+	2. start vncserver 
 
 Running test
 ============
-	robotframework.demo$ pybot test/screenshot.robot
+	1. connect to jenkins web console
+        http://127.0.0.1:8080
+	
+	2. build the robotframework.demo project
 
-Viewing log
-===========
-	robotframework.demo$ ls -l
-	-rw-rw-r-- 1 a a 206378 Jun  2 13:17 log.html
-	-rw-rw-r-- 1 a a   3594 Jun  2 13:17 output.xml
-	-rw-rw-r-- 1 a a 210974 Jun  2 13:17 report.html
-	-rw-rw-r-- 1 a a 334931 Jun  2 13:17 selenium-screenshot-1.png
+Viewing result
+==============
+	from jenkins log 
