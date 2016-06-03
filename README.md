@@ -20,4 +20,4 @@ Running test
 Viewing result
 ==============
 	From jenkins console, check report.html
-        Known issue: javascript error: https://issues.jenkins-ci.org/browse/JENKINS-32118
+	Known issue: javascript error: https://issues.jenkins-ci.org/browse/JENKINS-32118
