@@ -1,7 +1,7 @@
 robotframework.demo
 ===================
 	code tested on
-	Ubuntu 14.04 Desktop 64-bit
+        Ubuntu 14.04 Desktop 64-bit
         Mac OSX 10.11.5
 
 Environment preparation 
@@ -19,4 +19,5 @@ Running test
 
 Viewing result
 ==============
-	from jenkins log 
+	From jenkins console, check report.html
+        Known issue: javascript error: https://issues.jenkins-ci.org/browse/JENKINS-32118
