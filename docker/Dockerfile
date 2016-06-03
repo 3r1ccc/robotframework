@@ -18,7 +18,7 @@ RUN apt-get install -y openjdk-7-jdk
 # create jenkins user
 RUN useradd -d /var/jenkins -u 1000 -m -s /bin/bash jenkins
 
-# get jenkins.war
+# install jenkins.war
 ADD https://updates.jenkins-ci.org/download/war/1.658/jenkins.war /opt/jenkins.war
 RUN chown -R jenkins:jenkins /opt/jenkins.war
 
@@ -28,9 +28,14 @@ RUN mkdir -p /var/jenkins/.jenkins/jobs/robotframework.demo
 RUN cp robotframework.demo/jenkins/config.xml /var/jenkins/.jenkins/jobs/robotframework.demo
 RUN chown -R jenkins:jenkins /var/jenkins
 RUN chown -R jenkins:jenkins /var/jenkins/.jenkins
-RUN chown -R jenkins:jenkins /var/jenkins/.jenkins/jobs
-RUN chown -R jenkins:jenkins /var/jenkins/.jenkins/jobs/robotframework.demo
-RUN chown -R jenkins:jenkins /var/jenkins/.jenkins/jobs/robotframework.demo/config.xml
+
+# get jenkins xvnc
+RUN mkdir -p /var/jenkins/.jenkins/plugins
+RUN tar -xvf robotframework.demo/jenkins/xvnc.tar -C /var/jenkins/.jenkins/plugins
+RUN cp robotframework.demo/jenkins/hudson.plugins.xvnc.Xvnc.xml /var/jenkins/.jenkins/
+RUN chown -R jenkins:jenkins /var/jenkins/.jenkins/plugins
+RUN chown -R jenkins:jenkins /var/jenkins/.jenkins/plugins/xvnc
+RUN chown -R jenkins:jenkins /var/jenkins/.jenkins/hudson.plugins.xvnc.Xvnc.xml
 
 # switch to jenkins
 USER jenkins
