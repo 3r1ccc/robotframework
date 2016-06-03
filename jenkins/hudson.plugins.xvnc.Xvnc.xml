@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson.plugins.xvnc.Xvnc_-DescriptorImpl plugin="xvnc@1.23">
+  <xvnc>/usr/bin/vncserver :$DISPLAY_NUMBER -geometry 800x600</xvnc>
+  <minDisplayNumber>10</minDisplayNumber>
+  <maxDisplayNumber>99</maxDisplayNumber>
+  <skipOnWindows>true</skipOnWindows>
+  <cleanUp>false</cleanUp>
+  <allocators>
+    <entry>
+      <string></string>
+      <hudson.plugins.xvnc.DisplayAllocator>
+        <allocatedNumbers/>
+        <blacklistedNumbers/>
+      </hudson.plugins.xvnc.DisplayAllocator>
+    </entry>
+  </allocators>
+</hudson.plugins.xvnc.Xvnc_-DescriptorImpl>
