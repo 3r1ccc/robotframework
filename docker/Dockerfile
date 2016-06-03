@@ -8,8 +8,9 @@ RUN apt-get install -y python-pip python-virtualenv
 RUN apt-get install -y git
 RUN echo "\ndeb http://downloads.sourceforge.net/project/ubuntuzilla/mozilla/apt all main" | tee -a /etc/apt/sources.list > /dev/null
 RUN apt-key adv --recv-keys --keyserver keyserver.ubuntu.com C1289A29
-RUN apt-get update
-RUN apt-get install firefox-mozilla-build
+RUN apt-get -y update
+RUN apt-get install -y firefox-mozilla-build
+RUN apt-get install -y vnc4server
 
 # java for jenkins
 RUN apt-get install -y openjdk-7-jdk
