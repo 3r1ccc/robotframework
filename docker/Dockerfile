@@ -37,6 +37,12 @@ RUN chown -R jenkins:jenkins /var/jenkins/.jenkins/plugins
 RUN chown -R jenkins:jenkins /var/jenkins/.jenkins/plugins/xvnc
 RUN chown -R jenkins:jenkins /var/jenkins/.jenkins/hudson.plugins.xvnc.Xvnc.xml
 
+# get vncserver passwd
+RUN mkdir /var/jenkins/.vnc
+COPY passwd /var/jenkins/.vnc/passwd
+RUN chown -R jenkins:jenkins /var/jenkins/.vnc
+RUN chmod 0600 /var/jenkins/.vnc/passwd
+
 # switch to jenkins
 USER jenkins
 
